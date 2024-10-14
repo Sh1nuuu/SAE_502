@@ -1,167 +1,183 @@
 # SAE_502 Piloter un projet informatique
-### 1. Objectif
-L'objectif de ce cahier des charges est de détailler les besoins techniques, fonctionnels et de sécurité pour l’équipement réseau et l’infrastructure informatique d’un hôpital de campagne. Cet hôpital doit être équipé d’un réseau sécurisé, d’une téléphonie intégrée, d’objets connectés pour l’automatisation des processus, et d’une connexion VPN. Les données des patients doivent être protégées et leur accès doit être strictement contrôlé suivant le niveau de responsabilité du personnel.
-###2. Contexte
-L’hôpital de campagne doit être opérationnel à distance grâce à une conception WAN (Wide Area Network), permettre une gestion efficace et cloisonnée des utilisateurs, ainsi qu'une sécurité renforcée via des mesures de cybersécurité. Ce réseau doit également intégrer des objets IoT pour la gestion des ressources, des locaux et des équipements médicaux.
-###3. Équipements réseau requis
-####3.1 Routeur
-Nombre : 8+
-Fonctionnalités : Sécurisation des flux entrants et sortants, configuration DMZ (Zone démilitarisée) pour l’accès public, segmentation du réseau interne.
-Caractéristiques :
-Support du VPN (Virtual Private Network) pour interconnecter l’hôpital de campagne avec d'autres hôpitaux.
-Priorisation des flux pour les services critiques (médicaux, sécurité).
-Compatibilité avec les protocoles de cybersécurité.
-####3.2 Switch
-Nombre : 4
-Fonctionnalités : Répartition du réseau en plusieurs segments selon les services (médical, administration, sécurité).
-Caractéristiques :
-Support VLAN (Virtual LAN) pour cloisonner les réseaux par service.
-PoE (Power over Ethernet) pour les équipements comme les caméras et téléphones IP.
-###3.3 Pare-feu (Firewall)
-Nombre : 3+
-Fonctionnalités : Filtrage des accès, inspection des paquets, prévention des intrusions.
-Caractéristiques :
-Analyse en temps réel pour prévenir les attaques de type DDoS.
-Fonctionnalités IPS (Intrusion Prevention System) et IDS (Intrusion Detection System).
-###3.4 Téléphonie IP
-Nombre de postes téléphoniques : 10 téléphones, 1 par salle (à confirmer).
-Fonctionnalités : Téléphonie interne, interservice, et externe (liaison avec l’accueil).
-Caractéristiques :
-Système de communication VoIP intégré au réseau informatique.
-Compatibilité avec les infrastructures de communication de l’hôpital distant.
-###4. Sécurité réseau et cybersécurité
-###4.1 Séparation des flux réseau
-Mise en place d’une architecture réseau sécurisée : Les flux réseau doivent être segmentés pour éviter les intrusions entre les services (administration, médical, maintenance).
-Isolation des réseaux :
-Réseau pour les patients (données médicales).
-Réseau pour l’administration.
-Réseau pour les objets connectés (IoT).
-###4.2 Authentification
-Standard 802.1X et authentification centralisée via Radius : Gestion des accès sécurisés à travers l’authentification des utilisateurs, tant pour les postes fixes que pour les équipements mobiles.
-###4.3 Accès restreint à certaines salles
-Accès sécurisé aux salles critiques : Les salles d’opération ne seront accessibles qu’au personnel autorisé via des lecteurs de badges connectés.
-Capteurs d’ouverture/fermeture des portes : Installation de capteurs pour vérifier l’ouverture ou la fermeture des portes sensibles (salles d’opération, zones de stockage des médicaments).
-###4.4 Vidéosurveillance
-Caméras de sécurité internes et externes : Déploiement de caméras IP pour surveiller l’intérieur et l’extérieur du bâtiment. L’accès aux flux vidéos sera restreint aux personnels autorisés.
-###4.5 Données des patients
-Accès contrôlé aux données médicales : Le personnel aura accès aux informations en fonction de leur niveau de responsabilité.
-Stockage et gestion des données : Une base de données centralisée sera mise en place pour les patients et le personnel, sur des serveurs sécurisés.
-###5. Objets connectés (IoT) et gestion des infrastructures
-###5.1 Capteurs de sécurité
-Capteurs de mouvement et d’ouverture/fermeture des portes : Assurer la sécurité des accès.
-Capteurs d’air : Suivi de la qualité de l’air dans les salles de soins et d’opération.
-###5.2 Contrôle d'accès
-Lecteurs de badge et graveurs de badge : Mise en place d’un système de badge RFID pour l’accès au personnel et visiteurs autorisés.
-###6. Gestion et maintenance
-###6.1 Sauvegardes et reprise après sinistre
-Sauvegardes régulières : Mise en place d’un système de sauvegarde des données (patients, logs d'accès, passages de badges) avec une politique de rétention claire.
-Réinstallation automatique des serveurs : En cas de problème, une procédure de réinstallation automatisée permet la remise en service rapide des serveurs.
-###6.2 Procédures de basculement
-Serveur de secours : Un serveur de secours doit prendre le relais en cas de défaillance du serveur principal.
-Rotation des rôles entre serveur principal et serveur de secours : Une procédure d’échange entre le serveur principal et le serveur de secours permettra de maintenir la disponibilité des services.
-###6.3 Maintenance et astreinte
-Contrats de maintenance : Élaboration de contrats de maintenance avec des délais d’intervention garantis.
-Support en astreinte : Disponibilité de techniciens 24/7 pour gérer les urgences.
-###7. Infrastructure réseau et accès distant
-###7.1 Couverture Wifi
-Couverture Wifi complète dans tout l’hôpital pour garantir la connectivité des personnels mobiles et des objets connectés.
-###7.2 Interconnexion VPN
-VPN sécurisé : Connexion VPN pour accéder au site de l'hôpital de chez nous.
-###7.3 Téléphonie et communications
-Téléphonie IP : Réseau de téléphonie interne pour la communication entre les différentes salles et services.
-Interconnexion avec les services externes (standard et accueil).
-###8. Outils de gestion
-###8.1 Gestion de projet
-Trello : Utilisation de Trello pour suivre les tâches de l’équipe projet.
-###8.2 Collaboration et stockage
-Google Drive : Stockage des documents partagés sur Google Drive.
-###8.3 Gestion de version
-GitHub : Gestion de version pour les configurations réseau et scripts d’automatisation.
-###9. Budget Prévisionnel
-Le budget prévisionnel pour l'équipement et la mise en place du réseau pour l'hôpital de campagne inclut les éléments suivants :
-###9.1 Matériel Réseau
-######1. Routeurs/Pare-feu (4 unités) 
-Fortinet FortiGate 30E Firewall : 
-   Prix unitaire : 706,79 €  
-   Total estimé : 2 827,15€
-######2. Switchs (12 unités) 
+### Cahier des Charges Détails
+**Projet : Infrastructure réseau pour un hôpital de campagne (YETA Networks)**  
+**Équipe : Théo Marchand (3B), Erwann Sautet (3D), Yoland Coudert-Bourne (3A), Adrien Le Gousse (3B)**  
+**SAÉ 502 : Piloter un projet informatique**  
 
-​​Alcatel-Lucent OmniSwitch 6360 : 
-   Prix unitaire : 569,51€  
-   Total estimé : 6 834,10€
-######3. Téléphone IP
-Cisco CP 7821 SIP : 
-   Nombre estimé : 35 unités 
-   Prix unitaire : 60,59€  
-   Total estimé : 2 120,58€
-######4. Caméras de vidéosurveillance IP 
-AXIS M4327-P Panoramic Camera : 
-   Nombre  : 10 unités  
-   Prix unitaire : 534,96 €
-   Total  : 5 349,60 €
-######5. IPBX
-Alcatel-Lucent OmniPCX Office
-   Nombre  : 1 unité  
-   Prix unitaire : 1 372,16€
-   Total : 1 372,16€
-######6. Borne Wifi
-Alcatel-Lucent OmniAccess Stellar AP1221
-   Nombre : 25 unités  
-   Prix unitaire : 451,22€
-   Total : 11 280,60€
-######7. Poste de travail (Ordinateur, périphérique)
-   Nombre : 12 unités  
-   Prix unitaire : 900 €
-   Total : 16 200,00 €
-######8. Tablette
-   Nombre : 60 unités  
-   Prix unitaire : 1200 €
-   Total : 72 000,00 €
-###9.2 Infrastructures de Sécurité et IoT
-######1. Capteurs de mouvement, fumée, Co2 et Température, ESP   
-   Nombre : 60 unités
-   Prix unitaire : 44,03€ 
-   Total : 2 641,68€
-######2. Systèmes de contrôle d'accès (lecteurs et graveurs de badges) 
-   Nombre : 5 unités  
-   Prix unitaire : 118,80€  
-   Total : 594,00€
-Le coût total pour le matériel est estimé à 121 219,87€.
-###9.3 Maintenance et Support
-######1. Contrats de maintenance (équipement réseau sécurité)  
-   Coût annuel estimé : 17 258 €
-###9.4 Coûts d'Installation et de Déploiement
+---
 
-L'installation et la mise en place de l'infrastructure réseau, des équipements IoT, ainsi que la configuration des systèmes de sécurité et de téléphonie IP seront assurées par l'équipe technique. Les coûts d'installation sont détaillés comme suit :
+#### 1. Objectif
+L’objectif est de mettre en place une infrastructure réseau sécurisée et adaptée à un hôpital de campagne. Le réseau doit permettre la communication interne et externe, assurer la gestion des objets connectés pour la sécurité et la gestion de l’hôpital, tout en garantissant la protection des données sensibles des patients.
 
-######1. Installation des équipements réseau (routeurs, switchs, pare-feu)
-  
-   Nombre d'unités : 15  
-   Temps estimé : 5 jours de travail   
-   Total estimé : 17 210 €
+---
 
-######2. Installation et configuration des systèmes de téléphonie IP
- 
-   Temps estimé : 2 jours de travail   
-   Total estimé : 11 100 €
+#### 2. Contexte
+L’hôpital de campagne sera opérationnel à distance via un réseau WAN. Il doit permettre la gestion cloisonnée des services (médical, administration, IoT) et assurer la sécurité des échanges de données. Le réseau devra intégrer des dispositifs de sécurité avancés, des systèmes de téléphonie IP, ainsi que des objets connectés (IoT) pour la surveillance et la gestion des infrastructures.
 
-######3. Installation des systèmes de vidéosurveillance et des capteurs IoT
-  
-   Temps estimé : 3 jours de travail   
-   Total estimé : 11 500 €
+---
 
-######4. Installation et configuration des systèmes de contrôle d’accès (lecteurs/graveurs de badge) 
- 
-   Temps estimé : 1 jour de travail  
-   Total estimé : 1 450 €
+#### 3. Équipements réseau requis
 
-######5. Tests et validation des systèmes installés 
- 
-   Temps estimé : 2 jours de tests et de validation par l’équipe technique   
-   Total estimé : 11 100 €
+##### 3.1 Routeur  
+**Nombre :** 8 unités minimum  
+**Fonctionnalités :**  
+- Sécurisation des flux entrants et sortants  
+- Support du VPN pour interconnecter plusieurs sites  
+- Priorisation des services critiques (médicaux, sécurité)  
+**Caractéristiques :**  
+- Compatibilité avec les protocoles de cybersécurité  
+- DMZ pour accès public  
 
-Le coût total pour l'installation est estimé à 51 360 €, en fonction de la durée des interventions et du matériel installé. Ces coûts comprennent le travail de l’équipe technique pour la mise en place, la configuration des équipements, ainsi que les tests et la validation du bon fonctionnement des systèmes.
-###9.5 Ajustements et Prévisions de Déploiement
-Le déploiement sera ajusté en fonction des contraintes logistiques et des besoins spécifiques du projet. Un planning détaillé sera fourni avant le début des travaux afin d'assurer une coordination efficace avec les équipes du client.
+##### 3.2 Switch  
+**Nombre :** 4 unités (modèle : Alcatel 6360)  
+**Fonctionnalités :**  
+- Répartition du réseau en segments (médical, administration, sécurité)  
+- Support VLAN pour cloisonner les réseaux  
+**Caractéristiques :**  
+- PoE pour caméras et téléphones IP  
 
-Le budget global pour le projet, incluant l'installation, s'élève donc à 172 580 €. Prenant en compte le matériel, l'installation et les services associés. Un contrat de maintenance et un support technique peuvent être ajoutés au budget global. 
+##### 3.3 Pare-feu (Firewall)  
+**Nombre :** 3 unités minimum  
+**Fonctionnalités :**  
+- Filtrage des accès, prévention des intrusions  
+- Analyse des flux en temps réel, prévention contre les attaques DDoS  
+**Caractéristiques :**  
+- Support IPS/IDS  
+
+##### 3.4 Téléphonie IP  
+**Nombre de postes :** 10 postes téléphoniques  
+**Fonctionnalités :**  
+- Téléphonie VoIP interne et externe  
+- Communication interservice, liaison avec l'accueil  
+**Caractéristiques :**  
+- Système de téléphonie intégré au réseau de l’hôpital  
+
+---
+
+#### 4. Sécurité réseau et cybersécurité
+
+##### 4.1 Séparation des flux réseau  
+- Cloisonnement des services : réseau médical, administration, IoT  
+- Sécurité des flux pour éviter les intrusions  
+
+##### 4.2 Authentification  
+- Authentification centralisée via 802.1X et Radius  
+- Gestion des accès sécurisés pour les utilisateurs fixes et mobiles  
+
+##### 4.3 Accès restreint à certaines salles  
+- Accès sécurisé aux zones sensibles via des lecteurs de badge  
+- Capteurs pour surveiller l'ouverture/fermeture des portes  
+
+##### 4.4 Vidéosurveillance  
+- Caméras IP pour la surveillance interne et externe  
+- Accès restreint aux flux vidéos  
+
+##### 4.5 Données des patients  
+- Accès contrôlé et limité aux données des patients en fonction des niveaux de responsabilité  
+- Stockage des données sur des serveurs sécurisés  
+
+---
+
+#### 5. Objets connectés (IoT) et gestion des infrastructures
+
+##### 5.1 Capteurs de sécurité  
+- Capteurs de mouvement et de qualité de l’air dans les salles de soins  
+- Suivi des accès via capteurs aux portes  
+
+##### 5.2 Contrôle d'accès  
+- Lecteurs de badge RFID pour l'accès du personnel et des visiteurs  
+
+---
+
+#### 6. Gestion et maintenance
+
+##### 6.1 Sauvegardes et reprise après sinistre  
+- Système de sauvegarde des données patients et logs d’accès  
+- Réinstallation automatique des serveurs en cas de panne  
+
+##### 6.2 Procédures de basculement  
+- Serveur de secours pour garantir la continuité des services  
+- Rotation des serveurs principal et de secours  
+
+##### 6.3 Maintenance et astreinte  
+- Contrats de maintenance avec délais garantis  
+- Support technique 24/7 pour les urgences  
+
+---
+
+#### 7. Infrastructure réseau et accès distant
+
+##### 7.1 Couverture Wifi  
+- Couverture Wifi complète pour garantir la connectivité des dispositifs IoT et du personnel  
+
+##### 7.2 Interconnexion VPN  
+- VPN sécurisé pour l’accès distant à l’hôpital  
+
+##### 7.3 Téléphonie et communications  
+- Réseau de téléphonie IP interne pour les communications entre services  
+- Interconnexion avec le service d'accueil  
+
+---
+
+#### 8. Outils de gestion
+
+##### 8.1 Gestion de projet  
+- **Trello** pour le suivi des tâches  
+
+##### 8.2 Collaboration et stockage  
+- **Google Drive** pour le partage et la gestion des documents  
+
+##### 8.3 Gestion de version  
+- **GitHub** pour la gestion des configurations réseau et scripts  
+
+---
+
+#### 9. Budget Prévisionnel
+
+##### 9.1 Matériel Réseau  
+1. **Routeurs (8 unités minimum)** :  
+   - Prix unitaire : 500 € à 1 000 €  
+   - Total : 4 000 € à 8 000 €  
+2. **Switchs (4 unités)** :  
+   - Prix unitaire : 300 € à 600 €  
+   - Total : 1 200 € à 2 400 €  
+3. **Pare-feu (3 unités minimum)** :  
+   - Prix unitaire : 1 000 € à 2 000 €  
+   - Total : 3 000 € à 6 000 €  
+4. **Téléphonie IP (10 postes)** :  
+   - Prix unitaire : 150 € à 300 €  
+   - Total : 1 500 € à 3 000 €  
+5. **Caméras IP (5 à 10 unités)** :  
+   - Prix unitaire : 200 € à 500 €  
+   - Total : 1 000 € à 5 000 €  
+
+##### 9.2 Infrastructures de Sécurité et IoT  
+1. **Capteurs de sécurité** :  
+   - 100 € par unité  
+   - Total : 1 000 € à 2 000 €  
+2. **Contrôle d'accès (lecteurs/graveurs)** :  
+   - Prix unitaire : 510 €  
+   - Total : 2 550 €  
+
+##### 9.3 Maintenance et Support  
+- **Contrats de maintenance** : 7 450 € par an  
+- **Support technique 24/7** : 3 000 € par an  
+
+##### 9.4 Coûts de Formation  
+- Formation : 1 500 €  
+
+##### 9.5 Coûts d'Installation et de Déploiement  
+1. Installation des équipements réseau : 8 430 €  
+2. Téléphonie IP : 1 100 €  
+3. Vidéosurveillance et IoT : 1 500 €  
+4. Contrôle d’accès : 450 €  
+5. Tests et validation : 1 100 €  
+**Total Installation :** 12 580 €  
+
+##### 9.6 Ajustements et Prévisions de Déploiement  
+Les ajustements seront effectués en fonction des contraintes logistiques. Un planning détaillé sera fourni avant le début des travaux.  
+
+---
+
+**Budget Global :** 28 500 € à 64 000 €  
+Ce budget couvre l’ensemble des équipements, services de maintenance, installation et formation nécessaires pour la mise en place du réseau.
