@@ -1,5 +1,5 @@
 # SAE_502 Piloter un projet informatique
-### Cahier des Charges Détails
+### Cahier des Charges
 **Projet : Infrastructure réseau pour un hôpital de campagne (YETA Networks)**  
 **Équipe : Théo Marchand (3B), Erwann Sautet (3D), Yoland Coudert-Bourne (3A), Adrien Le Gousse (3B)**  
 **SAÉ 502 : Piloter un projet informatique**  
