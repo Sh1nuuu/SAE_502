@@ -3,7 +3,7 @@
 
 // Configuration Wi-Fi
 const char* ssid = "Freebox-683DA3";  // Remplacez par votre SSID Wi-Fi
-const char* password = "f9xt2qwdhnqbm2h4qnw3hd";  // Remplacez par votre mot de passe Wi-Fi
+const char* password = "Free";  // Remplacez par votre mot de passe Wi-Fi
 
 // Configuration MQTT
 const char* mqtt_server = "192.168.1.122";  // Remplacez par l'IP de votre Raspberry Pi
