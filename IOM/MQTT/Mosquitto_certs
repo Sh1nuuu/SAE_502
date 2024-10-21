@@ -7,7 +7,7 @@ rm /etc/mosquitto/certs/*
     city="Montbeliard"
     organization="IUT"
     common_name_CA=""
-    common_name_mosquitto="192.168.1.50"
+    common_name_mosquitto="192.168.10.122"
 
     # Vérifier si les certificats existent déjà
     if [ ! -f "/etc/mosquitto/certs/ca.crt" ]; then
