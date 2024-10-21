@@ -29,7 +29,7 @@ configure_mosquitto() {
     city="Montbeliard"
     organization="IUT"
     common_name_CA=""
-    common_name_mosquitto="192.168.1.50"
+    common_name_mosquitto="192.168.10.122"
 
     # Vérifier si les certificats existent déjà
     if [ ! -f "/etc/mosquitto/certs/ca.crt" ]; then
@@ -67,8 +67,8 @@ configure_mosquitto() {
     fi
 
     # Ajout de l'utilisateur par défaut
-    default_username="GRP-1-IOM"
-    default_password="Porygon-Z#1"
+    default_username="groupe4"
+    default_password="groupe4"
 
     # Vérifier si l'utilisateur par défaut existe déjà dans le fichier de mots de passe
     if grep -q "^$default_username:" "$password_file"; then
