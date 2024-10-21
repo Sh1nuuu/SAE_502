@@ -42,7 +42,7 @@ const char* ssid = "Groupe4";
 const char* password = "groupe_4";
 
 // Paramètres MQTT
-const char* MqttUser = "GtestRP-1-IOM";
+const char* MqttUser = "test";
 const char* MqttPass = "test";
 const char* mqtt_server = "192.168.10.122";
 const char* mqtt_topic = "/Sensor/rfid/uid/";
