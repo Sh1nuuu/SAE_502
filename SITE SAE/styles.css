@@ -1,0 +1,206 @@
+/* Style global pour toutes les pages */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Conteneur principal pour toutes les pages */
+.container, .login-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+/* Style pour le titre principal (accueil) */
+h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;
+}
+
+/* Style pour le titre secondaire (pages de login) */
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Style pour le paragraphe de l'accueil */
+p {
+    margin-bottom: 30px;
+    font-size: 1.2em;
+    color: #666;
+}
+
+/* Style des boutons sur la page d'accueil */
+.button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    margin: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    background-color: #007bff;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 80%; /* Largeur à 80% pour un aspect fluide */
+    max-width: 300px; /* Limiter la taille maximale des boutons */
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px); /* Légère animation de hover */
+}
+
+/* Couleurs différentes pour chaque bouton */
+.btn:nth-child(1) {
+    background-color: #007bff; /* Couleur bleue pour médecin */
+}
+
+.btn:nth-child(1):hover {
+    background-color: #0056b3;
+}
+
+.btn:nth-child(2) {
+    background-color: #28a745; /* Couleur verte pour infirmière */
+}
+
+.btn:nth-child(2):hover {
+    background-color: #218838;
+}
+
+.btn:nth-child(3) {
+    background-color: #dc3545; /* Couleur rouge pour patient */
+}
+
+.btn:nth-child(3):hover {
+    background-color: #c82333;
+}
+
+/* Formulaire de connexion */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-group input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Bouton de connexion pour les pages login */
+.login-btn {
+    width: 100%;
+    background-color: #28a745;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.login-btn:hover {
+    background-color: #218838;
+}
+
+/* Bouton de retour à l'accueil pour les pages de login */
+.btn-back-small {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 8px 15px;
+    font-size: 12px;
+    background-color: #6c757d;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-back-small:hover {
+    background-color: #5a6268;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container, .login-container {
+        padding: 30px;
+    }
+
+    .btn-back-small {
+        font-size: 10px;
+        padding: 6px 10px;
+    }
+
+    .form-group input {
+        font-size: 14px;
+    }
+
+    .login-btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .btn {
+        font-size: 16px;
+        padding: 12px 25px;
+        width: 90%; /* Adapter la largeur pour les petits écrans */
+    }
+}
+
+@media (max-width: 480px) {
+    .container, .login-container {
+        padding: 20px;
+    }
+
+    .btn-back-small {
+        font-size: 9px;
+        padding: 5px 8px;
+    }
+
+    .form-group input {
+        font-size: 12px;
+    }
+
+    .login-btn {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
