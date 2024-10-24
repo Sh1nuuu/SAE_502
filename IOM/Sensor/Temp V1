@@ -3,7 +3,7 @@
 
 // Configuration Wi-Fi
 const char* ssid = "Groupe4";  // Remplacez par votre SSID Wi-Fi
-const char* password = "groupe4";  // Remplacez par votre mot de passe Wi-Fi
+const char* password = "groupe_4";  // Remplacez par votre mot de passe Wi-Fi
 
 // Configuration MQTT
 const char* mqtt_server = "192.168.1.122";  // Remplacez par l'IP de votre Raspberry Pi
