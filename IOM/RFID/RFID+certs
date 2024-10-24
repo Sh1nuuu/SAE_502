@@ -35,13 +35,11 @@ H6gS
 MFRC522 mfrc522(SS_PIN, RST_PIN); // Créez une instance de MFRC522.
 
 // Paramètres du réseau WiFi
-const char* ssid = "GRP-1-IOM";
-const char* password = "Porygon-Z#1";
+const char* ssid = "Groupe4";
+const char* password = "groupe_4";
 
 // Paramètres MQTT
-const char* MqttUser = "GRP-1-IOM";
-const char* MqttPass = "Porygon-Z#1";
-const char* mqtt_server = "192.168.1.50";
+const char* mqtt_server = "192.168.1.122";
 const char* mqtt_topic = "/Sensor/rfid/";
 
 WiFiClientSecure espClient;
