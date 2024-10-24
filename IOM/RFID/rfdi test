@@ -13,8 +13,8 @@
 Adafruit_PN532 nfc(PN532_IRQ, PN532_RESET, &Wire);
 
 // Informations Wi-Fi
-const char* ssid = "votre_SSID";
-const char* password = "votre_mot_de_passe";
+const char* ssid = "Groupe4";
+const char* password = "groupe_4";
 
 // Informations MariaDB
 IPAddress server_addr(192, 168, 1, 100);  // Adresse IP de votre serveur MariaDB
